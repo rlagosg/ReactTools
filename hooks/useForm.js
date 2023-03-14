@@ -6,6 +6,8 @@ export const useForm = ( initialForm = {} ) => {
   
   const { username, email, password } = formState;
 
+  const onResetForm = () => setFormState( initialForm );
+
   const onInputChange = ({ target }) => {
     const { name, value } = target;
     setFormState({
@@ -17,7 +19,8 @@ export const useForm = ( initialForm = {} ) => {
   return {
     ...formState,
     formState,
-    onInputChange
+    onInputChange,
+    onResetForm
   }
 }
 
